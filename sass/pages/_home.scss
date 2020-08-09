@@ -28,7 +28,7 @@
     margin-top: -12rem;
 
     @include respond(tab-port){
-        padding: 15rem 0 ;
+        padding: 10rem 0 ;
     }
 }
 
@@ -70,11 +70,34 @@
 
 
 
-    height: 50rem;// u pocetku treba jer nema visinu
+    //height: 50rem;// u pocetku treba jer nema visinu
+
+    @include respond(tab-land){
+        background-image: linear-gradient(105deg, 
+                                    rgba($color-white, .8) 0%,
+                                    rgba($color-white, 0.8) 65%, 
+                                    transparent 65%),
+                                    url(../img/nat-10.jpg);
+    }
+
+    @include respond(tab-port){
+        background-image: linear-gradient(to right, 
+                                    rgba($color-white, .8) 0%,
+                                    rgba($color-white, 0.8) 100% 
+                                    ),
+                                    url(../img/nat-10.jpg);
+    }
 
     &__form {
         width: 50%;
         padding: 6rem;
+        
+        @include respond(tab-land){
+            width: 65%;
+        }
+        @include respond(tab-port){
+            width: 100%;
+        }
     }
     
 }
